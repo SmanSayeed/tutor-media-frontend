@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Text from "@/components/atoms/Text/Text";
 
 export function HeroSection() {
   return (
@@ -19,34 +20,38 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-              🎓 Find Your Perfect Tutor
+            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full mb-6">
+              <Text variant="others-text-base" as="span">🎓 Find Your Perfect Tutor</Text>
             </span>
           </motion.div>
 
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight"
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6 leading-tight"
           >
-            Connect with{" "}
-            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Expert Tutors
-            </span>{" "}
-            Near You
-          </motion.h1>
+            <Text variant="heading" as="h1" className="text-5xl md:text-7xl text-slate-900">
+              Connect with{" "}
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                Expert Tutors
+              </span>{" "}
+              Near You
+            </Text>
+          </motion.div>
 
-          <motion.p
-            className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto"
+          <motion.div
+            className="mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Tutor Media connects students with qualified tutors for personalized
-            learning experiences. Whether you&apos;re a guardian looking for help or
-            a tutor ready to teach, we&apos;ve got you covered.
-          </motion.p>
+            <Text variant="others-text-lg" as="p" className="text-slate-600">
+              Tutor Media connects students with qualified tutors for personalized
+              learning experiences. Whether you&apos;re a guardian looking for help or
+              a tutor ready to teach, we&apos;ve got you covered.
+            </Text>
+          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -84,10 +89,12 @@ export function HeroSection() {
               { value: "98%", label: "Satisfaction Rate" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-bold text-emerald-600">
+                <Text variant="sub-heading" as="div" className="text-3xl md:text-4xl font-bold text-emerald-600">
                   {stat.value}
-                </div>
-                <div className="text-slate-600 text-sm mt-1">{stat.label}</div>
+                </Text>
+                <Text variant="others-text-base" as="div" className="text-slate-600 mt-1">
+                  {stat.label}
+                </Text>
               </div>
             ))}
           </motion.div>

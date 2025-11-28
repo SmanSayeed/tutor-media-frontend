@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { login } from "@/actions/auth.actions";
+import Text from "@/components/atoms/Text/Text";
 
 export function LoginForm() {
   return (
@@ -21,9 +22,11 @@ export function LoginForm() {
     >
       <Card className="w-full max-w-md shadow-xl border-0 bg-white/80 backdrop-blur">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
+          <CardTitle>
+            <Text variant="sub-heading" as="h2">Welcome Back</Text>
+          </CardTitle>
           <CardDescription>
-            Sign in to your Tutor Media account
+            <Text variant="others-text-base" as="span">Sign in to your Tutor Media account</Text>
           </CardDescription>
         </CardHeader>
         <CardContent>

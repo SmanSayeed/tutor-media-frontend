@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { register } from "@/actions/auth.actions";
+import Text from "@/components/atoms/Text/Text";
 
 export function RegisterForm() {
   return (
@@ -22,9 +23,11 @@ export function RegisterForm() {
     >
       <Card className="w-full max-w-md shadow-xl border-0 bg-white/80 backdrop-blur">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
+          <CardTitle>
+            <Text variant="sub-heading" as="h2">Create Account</Text>
+          </CardTitle>
           <CardDescription>
-            Join Tutor Media as a tutor or guardian
+            <Text variant="others-text-base" as="span">Join Tutor Media as a tutor or guardian</Text>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -53,7 +56,9 @@ export function RegisterForm() {
               required
             />
             <div className="space-y-2">
-              <Label>I am a</Label>
+              <Label>
+                <Text variant="others-text-base" as="span">I am a</Text>
+              </Label>
               <div className="flex gap-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -63,7 +68,7 @@ export function RegisterForm() {
                     defaultChecked
                     className="w-4 h-4 text-emerald-600"
                   />
-                  <span>Guardian</span>
+                  <Text variant="others-text-base" as="span">Guardian</Text>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -72,7 +77,7 @@ export function RegisterForm() {
                     value="tutor"
                     className="w-4 h-4 text-emerald-600"
                   />
-                  <span>Tutor</span>
+                  <Text variant="others-text-base" as="span">Tutor</Text>
                 </label>
               </div>
             </div>
@@ -101,8 +106,8 @@ export function RegisterForm() {
                 required
                 className="w-4 h-4"
               />
-              <Label htmlFor="terms" className="text-sm font-normal">
-                I agree to the Terms & Conditions
+              <Label htmlFor="terms">
+                <Text variant="others-text-base" as="span">I agree to the Terms & Conditions</Text>
               </Label>
             </div>
             <Button

@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Text from "@/components/atoms/Text/Text";
 
 interface FormFieldProps {
   id: string;
@@ -20,7 +21,9 @@ export function FormField({
 }: FormFieldProps) {
   return (
     <div className="space-y-2">
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id}>
+        <Text variant="others-text-base" as="span">{label}</Text>
+      </Label>
       <Input
         id={id}
         name={name}
