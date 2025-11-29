@@ -3,3 +3,4 @@ export { HeroSection } from "./HeroSection";
 export { LoginForm } from "./LoginForm";
 export { RegisterForm } from "./RegisterForm";
 
+export { Footer } from "./Footer";

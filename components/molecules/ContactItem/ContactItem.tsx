@@ -31,11 +31,7 @@ export default function ContactItem({
         height={20}
         className="w-5 h-5 mt-1"
       />
-      <Text
-        as="div"
-        variant="others-text-base"
-        className="text-brand-footer-text"
-      >
+      <Text as="div" variant="contact-text">
         {children}
       </Text>
     </div>

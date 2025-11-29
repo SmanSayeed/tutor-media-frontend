@@ -30,7 +30,7 @@ export default function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "w-12 h-12 sm:w-14 sm:h-14 md:w-[60px] md:h-[60px] rounded-full bg-brand-primary-500 flex items-center justify-center hover:bg-brand-primary-600 transition-colors",
+        "w-9 h-9 flex items-center justify-center rounded-full bg-brand-primary-500 hover:bg-brand-primary-600 transition-colors",
         className
       )}
     >
