@@ -1,107 +1,75 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import Text from "@/components/atoms/Text/Text";
-import HeroText from "../atoms/Text/HeroText";
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import Text from '@/components/atoms/Text/Text';
+import Image from 'next/image';
+import VideoPlayer from '../atoms/Video/Video';
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.1),transparent_50%)]" />
-
-      <div className="container mx-auto px-6 pt-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full mb-6">
-              <HeroText />
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 leading-tight"
-          >
-            <Text variant="heading" as="h1" className="text-5xl md:text-7xl text-slate-900">
-              Connect with{" "}
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Expert Tutors
-              </span>{" "}
-              Near You
-            </Text>
-          </motion.div>
-
-          <motion.div
-            className="mb-10 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Text variant="others-text-lg" as="p" className="text-slate-600">
-              Tutor Media connects students with qualified tutors for personalized
-              learning experiences. Whether you&apos;re a guardian looking for help or
-              a tutor ready to teach, we&apos;ve got you covered.
-            </Text>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Button
-              size="lg"
-              className="h-14 px-8 text-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg shadow-emerald-500/25"
-              asChild
-            >
-              <Link href="/register">Get Started Free</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-14 px-8 text-lg border-2"
-              asChild
-            >
-              <Link href="/login">I Have an Account</Link>
-            </Button>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {[
-              { value: "500+", label: "Expert Tutors" },
-              { value: "10K+", label: "Students Helped" },
-              { value: "98%", label: "Satisfaction Rate" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <Text variant="sub-heading" as="div" className="text-3xl md:text-4xl font-bold text-emerald-600">
-                  {stat.value}
-                </Text>
-                <Text variant="others-text-base" as="div" className="text-slate-600 mt-1">
-                  {stat.label}
-                </Text>
+    <section className=''>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className='container mx-auto px-6 '>
+          <div className='flex  justify-center gap-16 items-center'>
+            <div className='w-1/2'>
+              <Text
+                as='h1'
+                
+                className='text-brand-primary-500 text-8xl font-semibold'
+              >
+                Get Tuition Jobs
+              </Text>
+              <br />
+              <Text as='h1' className='text-4xl font-semibold'>
+                No Commissions & Keep 100% of <br /> Your Earnings!
+              </Text>
+              <br />
+              <div className='flex items-center'>
+                <Button className='bg-brand-primary-500 flex items-center'>
+                  <p>Start Earning as a tutor</p>
+                  <Image width={15} height={15} src='/right-arrow.png' alt='' />
+                </Button>
+                <Button className='ml-2' variant={'outline'}>
+                  <Text as='p' className='text-brand-primary-500'>
+                    Hire a tutor
+                  </Text>
+                </Button>
               </div>
-            ))}
-          </motion.div>
+              <br />
+              <br />
+              <div className='flex items-center'>
+                <Image width={18} height={18} src='/man-plus.png' alt='' />
+                <Text as='p' className='text-gray-500 text-sm ml-2'>
+                  want to become a tutor?
+                </Text>
+                <Text as='p' className='text-gray-500 text-sm'>
+                  Sign Up
+                </Text>
+                <div className='bg-brand-primary-500 ml-2 rounded-full h-[19px] w-[19px] relative'>
+                  <Image
+                    width={15}
+                    height={15}
+                    src='/arrow.png'
+                    alt=''
+                    className='absolute top-1'
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='w-1/2'>
+              <VideoPlayer
+                url='https://www.youtube.com/watch?v=lg4uP7QjIZk'
+                className='w-full'
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
-
