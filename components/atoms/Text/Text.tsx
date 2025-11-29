@@ -12,9 +12,9 @@ const textVariants = cva("text-black", {
       "others-text-base": "text-base font-light", // 16px Light (closest to 15px)
       "footer-link": "text-white text-lg font-normal capitalize leading-[124%]", // 18px Regular, 124% line-height, capitalize, white
       "download-app-heading":
-        "text-white text-[24px] font-medium capitalize leading-[124%]", // 42.13px Medium, 124% line-height, capitalize, white
+        "text-white text-[24px] font-medium capitalize leading-[124%]", // 24px , 124% line-height, capitalize, white
       "social-heading":
-        "text-white text-[12.5px] font-semibold capitalize leading-[124%] font-rubik", // 20.81px SemiBold, 124% line-height, capitalize, Rubik
+        "text-white text-[12.5px] font-semibold capitalize leading-[124%] font-rubik", // 12.5px , 124% line-height, capitalize, Rubik
       "contact-text":
         "text-white text-lg font-normal capitalize leading-[156%]", // 18px Regular, 156% line-height, capitalize, white
     },
