@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Button from "@/components/atoms/Button/Button";
 import LinkAtom from "@/components/atoms/Link/Link";
 import NavLink from "@/components/molecules/NavLink/NavLink";
+import IconButton from "@/components/molecules/IconButton/IconButton";
 import Icon from "@/components/atoms/Icon/Icon";
 
-export function Navbar() {
+export default function Header() {
   const [bannerVisible, setBannerVisible] = useState(true);
   const [language, setLanguage] = useState<"ENG" | "বাংলা">("ENG");
 
@@ -17,12 +17,7 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
-      className="w-full"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
+    <header>
       {/* Top Banner - Closable */}
       {bannerVisible && (
         <div className="relative">
@@ -46,9 +41,9 @@ export function Navbar() {
 
       {/* Main Navbar */}
       <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-screen-xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <div className="shrink-0">
+            <div className="flex-shrink-0">
               <Image
                 src="/assets/Header/Tution_Solution_BD_Logo.png"
                 alt="Tutor Solution BD"
@@ -60,7 +55,7 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-6">
-              <Button variant="outline" color="primary" size="md">
+              <Button variant="outline" size="md">
                 Job Board
               </Button>
               <NavLink label="Opportuniteis Hub" hasDropdown />
@@ -68,13 +63,11 @@ export function Navbar() {
             </div>
 
             <div className="flex items-center gap-4">
-              <button
+              <IconButton
+                icon="Globe"
+                label={language}
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <Icon name="Globe" size={20} />
-                <span className="text-sm font-medium">{language}</span>
-              </button>
+              />
               <div className="w-8 h-8 flex items-center justify-center">
                 <Image
                   src="/assets/Header/sun_icon.png"
@@ -94,6 +87,6 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-    </motion.header>
+    </header>
   );
 }
