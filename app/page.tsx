@@ -1,10 +1,9 @@
-import { MainLayout } from "@/components/templates/MainLayout";
-import { HeroSection } from "@/components/organisms/HeroSection";
+import Homepage from "@/components/templates/Homepage";
 
 export default function HomePage() {
   return (
-    <MainLayout>
-      <HeroSection />
-    </MainLayout>
+    <>
+      <Homepage />
+    </>
   );
 }
