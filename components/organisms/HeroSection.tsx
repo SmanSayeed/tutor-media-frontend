@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Text from "@/components/atoms/Text/Text";
+import HeroText from "../atoms/Text/HeroText";
 
 export function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full mb-6">
-              <Text variant="others-text-base" as="span">🎓 Find Your Perfect Tutor</Text>
+              <HeroText />
             </span>
           </motion.div>
 
